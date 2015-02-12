@@ -1,70 +1,112 @@
 
 $(document).ready(function(){
 
-	var num = Math.floor( Math.random()*100 );
-	$('.navlist').append('<li>randomValue: '+ num +'</li>' );
 	
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
     	$(".overlay").fadeIn(1000);
 
-  	}); // End of display information modal box
+  	}); 
 
   	/*--- Hide information modal box ---*/
   	$("a.close").click(function(){
   		$(".overlay").fadeOut(1000);
-  	}); // End of display information modal box
+  	}); 
 
-  	/* --- Click on id=guessButton ---*/
-  
+  	
+  	/* -- Variables -- */
   	var guessCount=0
-  	$('#guessButton').click(function(){
+  	var num = Math.floor( Math.random()*100+1 );
+  	var x;
+  	var y;
+  	var color;
+	console.log('Random number: '+num)
 
+	/* -- Set feedback messages --*/ 
+  	function Alerta(message) {
+  		$('#feedback').html(message);
+  	};
 
-  			var x = $('#userGuess').val()
-  			guessCount++;
-  		if ( $.isNumeric( x ) && x%1==0 && x>0 ) {
+  	/* -- Counter guess -- */
+  	function Counter() {
+  		$('#count').html(guessCount)
+  	};
+
+  	/* -- Focus in input -- */
+  	function goFocus() {
+  		$('#userGuess').val('').focus();
+  	};
+
+  	/* -- Background color of #feedback -- */ 
+  	function getColor() {
+  		$('h2').css('Background-color', 'blue');
+  	}
+  
+
+	/*--- On submit-- */
+
+  	$('form').submit(function(e){
+
+  		e.preventDefault();
+
+  		x = $('#userGuess').val();
+  		guessCount++;
+
+  		if ( $.isNumeric( x ) && x % 1 == 0 && x > 0 && x <= 100 ) {
 
   			while (num!=x) {
 
-  				var y = Math.abs(num-x)
+  				y = Math.abs(num-x)
 
-  				if ( y < 10 ) {
-  					$('#feedback').html('Very Hot');
+  				if ( y < 5 ) {
+  					Alerta("Getting nervous? Almost!")
+  				}
+
+  				else if ( y < 10 ) {
+  					Alerta('Very Hot');
   				}
 
   				else if (y < 20 ) {
-  					$('#feedback').html('Hot');
+  					Alerta('Hot');
+  				}
+
+  				else if (y < 30 ) {
+  					Alerta('Warmer')
   				}
 
   				else if ( y < 50 ) {
-  					$('#feedback').html('Cold');
+  					Alerta('Getting there, still cold though');
   				}
 
   				else {
-  					$('#feedback').html('Very Cold');
+  					Alerta('Very... Very Cold');
+
   				}
 
   				$('#guessList').append('<li>' + x + '</li>');
 
-  				$('#count').html(guessCount);
+  				Counter();
+  				goFocus();
 
   				return false;
   			}; // End while loop
 
-  			/* -- Checks equality between num and x -- */
   			if ( num == x ) {
-  				$('#feedback').html('You got it!').css('font-size','3em');
-  				$('#count').html(guessCount);
-  			}; // End if var equality
+  				Alerta('You got it!');
+  				$('#feedback').css('font-size','3em');
+  				Counter();
+  				goFocus();
+  				$('#userGuess').val( x );
+  			}; 
 
   		} // Close if conditions	
 
   		else{
-  			$('#feedback').html('I can only take positive integer');
+  			Alerta('I can only take positive integers below 100');
   			guessCount--;
   		}
   	}); //End of guessButton script
+
   
 
 }); // End of document script
