@@ -15,53 +15,55 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	}); // End of display information modal box
 
-  	$(this).keydown( function(e) {
-  		if (e.which==13) {
-  			e.preventDefault()	
-  		}
-  	})
-
   	/* --- Click on id=guessButton ---*/
   
   	var guessCount=0
   	$('#guessButton').click(function(){
 
-  		var x = $('#userGuess').val()
+
+  			var x = $('#userGuess').val()
   			guessCount++;
+  		if ( $.isNumeric( x ) && x%1==0 && x>0 ) {
 
-  		while (num!=x) {
+  			while (num!=x) {
 
-  			var y = Math.abs(num-x)
+  				var y = Math.abs(num-x)
 
-  			if ( y < 10 ) {
-  				$('#feedback').html('Very Hot');
-  			}
+  				if ( y < 10 ) {
+  					$('#feedback').html('Very Hot');
+  				}
 
-  			else if (y < 20 ) {
-  				$('#feedback').html('Hot');
-  			}
+  				else if (y < 20 ) {
+  					$('#feedback').html('Hot');
+  				}
 
-  			else if ( y < 50 ) {
-  				$('#feedback').html('Cold');
-  			}
+  				else if ( y < 50 ) {
+  					$('#feedback').html('Cold');
+  				}
 
-  			else {
-  				$('#feedback').html('Very Cold');
-  			}
+  				else {
+  					$('#feedback').html('Very Cold');
+  				}
 
-  			$('#guessList').append('<li>' + x + '</li>');
+  				$('#guessList').append('<li>' + x + '</li>');
 
-  			$('#count').html(guessCount);
+  				$('#count').html(guessCount);
 
-  			return false;
-  		}; // End while loop
+  				return false;
+  			}; // End while loop
 
-  		/* -- Checks equality between num and x -- */
-  		if ( num == x ) {
-  			$('#feedback').html('You got it!').css('font-size','3em');
-  			$('#count').html(guessCount);
-  		}; // End if var equality
-  		
+  			/* -- Checks equality between num and x -- */
+  			if ( num == x ) {
+  				$('#feedback').html('You got it!').css('font-size','3em');
+  				$('#count').html(guessCount);
+  			}; // End if var equality
+
+  		} // Close if conditions	
+
+  		else{
+  			$('#feedback').html('I can only take positive integer');
+  			guessCount--;
+  		}
   	}); //End of guessButton script
   
 
