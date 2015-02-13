@@ -20,6 +20,7 @@ $(document).ready(function(){
   	var num = Math.floor( Math.random()*100+1 );
   	var x;
   	var y;
+  	var winner=false;
   	var color;
 	console.log('Random number: '+num)
 
@@ -46,6 +47,14 @@ $(document).ready(function(){
   	/* -- Background color of #feedback -- */ 
   	function getColor() {
   		$('h2').animate({'background-color': '#D3E1FA'}, 'slow');
+  	}
+
+  	/* -- change input type -- */
+  	function inputType() {
+  		$('#guessButton').prop('type', 'button');	
+  		$('#userGuess').prop('readonly',true).on('submit', function(){
+  			return false;
+  		});
   	}
 
   
@@ -107,8 +116,8 @@ $(document).ready(function(){
   				Alerta('You got it!');
   				$('#feedback').css('font-size','2em');
   				Counter();
-  				$('#userGuess').val( x ).prop('readonly',true);
-  				
+  				$('#userGuess').val( x );
+  				inputType();
   			}; 
 
   		} 
