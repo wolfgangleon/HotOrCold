@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
 
+	$('#userGuess').focus();
 	
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
@@ -22,6 +23,11 @@ $(document).ready(function(){
   	var color;
 	console.log('Random number: '+num)
 
+	/* -- NewGame -- */ 
+	function newGame() {
+		location.reload();
+	}
+
 	/* -- Set feedback messages --*/ 
   	function Alerta(message) {
   		$('#feedback').html(message);
@@ -42,6 +48,10 @@ $(document).ready(function(){
   		$('h2').css('Background-color', 'blue');
   	}
   
+  	/* -- newGame click --*/
+  	$('.new').click(function() {
+  		newGame();
+  	});
 
 	/*--- On submit-- */
 
@@ -93,18 +103,19 @@ $(document).ready(function(){
 
   			if ( num == x ) {
   				Alerta('You got it!');
-  				$('#feedback').css('font-size','3em');
+  				$('#feedback').css('font-size','2em');
   				Counter();
   				goFocus();
   				$('#userGuess').val( x );
   			}; 
 
-  		} // Close if conditions	
+  		} 
 
   		else{
   			Alerta('I can only take positive integers below 100');
   			guessCount--;
-  		}
+  		}// Close if conditions	
+
   	}); //End of guessButton script
 
   
