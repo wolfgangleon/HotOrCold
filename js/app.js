@@ -114,7 +114,7 @@ $(document).ready(function(){
 
   			if ( num == x ) {
   				Alerta('You got it!');
-  				$('#feedback').css('font-size','2em');
+  				$('#feedback').css('font-size','1.5em');
   				Counter();
   				$('#userGuess').val( x );
   				inputType();
