@@ -22,6 +22,8 @@ html {
 	width: 100%;
 	height: 100%;
 	background-color: #394264;
+	background: url('http://trickvilla.com/wp-content/uploads/Wood-Background-Images.jpg');
+	background-size: cover;
 }
 
 body {
@@ -30,7 +32,7 @@ body {
 	height: 96%;
 	margin: 0.8em auto;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
-	background-color: #1F253D;
+	background-color: rgba(133, 181, 190,0.9);
 	text-align: center;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -68,6 +70,7 @@ nav ul li {
 nav ul li:first-child {
 	float: left;
 }
+
 
 nav ul li:last-child {
 	float: right;
@@ -177,34 +180,34 @@ h1 {
 	border-radius: 4px;
 	margin: 0 auto;
 
-	box-shadow: rgb(26, 31, 52) 1px 1px,
-    rgb(26, 31, 52) 2px 2px,
-    rgb(26, 31, 52) 3px 3px,
-    rgb(26, 31, 53) 4px 4px,
-    rgb(26, 32, 53) 5px 5px,
-    rgb(27, 32, 53) 6px 6px,
-    rgb(27, 32, 54) 7px 7px,
-    rgb(27, 32, 54) 8px 8px,
-    rgb(27, 32, 54) 9px 9px,
-    rgb(27, 33, 55) 10px 10px,
-    rgb(27, 33, 55) 11px 11px,
-    rgb(28, 33, 55) 12px 12px,
-    rgb(28, 33, 56) 13px 13px,
-    rgb(28, 34, 56) 14px 14px,
-    rgb(28, 34, 56) 15px 15px,
-    rgb(28, 34, 57) 16px 16px,
-    rgb(29, 34, 57) 17px 17px,
-    rgb(29, 34, 57) 18px 18px,
-    rgb(29, 35, 58) 19px 19px,
-    rgb(29, 35, 58) 20px 20px,
-    rgb(29, 35, 58) 21px 21px,
-    rgb(29, 35, 59) 22px 22px,
-    rgb(30, 35, 59) 23px 23px,
-    rgb(30, 36, 59) 24px 24px,
-    rgb(30, 36, 60) 25px 25px,
-    rgb(30, 36, 60) 26px 26px,
-    rgb(30, 36, 60) 27px 27px,
-    rgb(31, 37, 61) 28px 28px;
+	box-shadow: rgba(133, 181, 190, 0.9) 1px 1px,
+    rgba(133, 181, 190, 0.9) 2px 2px,
+    rgba(133, 181, 190, 0.9) 3px 3px,
+    rgba(133, 181, 190, 0.9) 4px 4px,
+    rgba(133, 182, 190, 0.9) 5px 5px,
+    rgba(134, 182, 190, 0.9) 6px 6px,
+    rgba(134, 182, 191, 0.9) 7px 7px,
+    rgba(134, 182, 191, 0.9) 8px 8px,
+    rgba(134, 182, 191, 0.9) 9px 9px,
+    rgba(134, 183, 192, 0.9) 10px 10px,
+    rgba(134, 183, 192, 0.9) 11px 11px,
+    rgba(135, 183, 192, 0.9) 12px 12px,
+    rgba(135, 183, 193, 0.9) 13px 13px,
+    rgba(135, 184, 193, 0.9) 14px 14px,
+    rgba(135, 184, 193, 0.9) 15px 15px,
+    rgba(135, 184, 194, 0.9) 16px 16px,
+    rgba(136, 184, 194, 0.9) 17px 17px,
+    rgba(136, 184, 194, 0.9) 18px 18px,
+    rgba(136, 185, 195, 0.9) 19px 19px,
+    rgba(136, 185, 195, 0.9) 20px 20px,
+    rgba(136, 185, 195, 0.9) 21px 21px,
+    rgba(136, 185, 196, 0.9) 22px 22px,
+    rgba(137, 185, 196, 0.9) 23px 23px,
+    rgba(137, 186, 196, 0.9) 24px 24px,
+    rgba(137, 186, 197, 0.9) 25px 25px,
+    rgba(137, 186, 197, 0.9) 26px 26px,
+    rgba(137, 186, 197, 0.9) 27px 27px,
+    rgba(138, 187, 198, 0.9) 28px 28px;
 
 }
 

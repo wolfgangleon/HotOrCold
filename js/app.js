@@ -45,8 +45,9 @@ $(document).ready(function(){
 
   	/* -- Background color of #feedback -- */ 
   	function getColor() {
-  		$('h2').css('Background-color', 'blue');
+  		$('h2').animate({'background-color': '#D3E1FA'}, 'slow');
   	}
+
   
   	/* -- newGame click --*/
   	$('.new').click(function() {
@@ -84,12 +85,13 @@ $(document).ready(function(){
   					Alerta('Warmer')
   				}
 
-  				else if ( y < 50 ) {
+  				else if ( y < 35 ) {
   					Alerta('Getting there, still cold though');
   				}
 
   				else {
   					Alerta('Very... Very Cold');
+  					getColor();
 
   				}
 
@@ -105,8 +107,8 @@ $(document).ready(function(){
   				Alerta('You got it!');
   				$('#feedback').css('font-size','2em');
   				Counter();
-  				goFocus();
-  				$('#userGuess').val( x );
+  				$('#userGuess').val( x ).prop('readonly',true);
+  				
   			}; 
 
   		} 
